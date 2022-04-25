@@ -22,7 +22,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Blog'], function () {
 //    return view('welcome');
 //});
 
-
+Route::prefix('admin')->group(function () {
+    Route::group(['namespace' => 'App\Http\Controllers\Admin\Blog'], function () {
+        Route::get('/', 'IndexController');
+    });
+});
 
 Auth::routes();
 

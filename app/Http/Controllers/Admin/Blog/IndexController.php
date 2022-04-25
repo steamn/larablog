@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
    public function __invoke()
    {
-       return 121212;
+       return view('admin.blog.index');
    }
 }
