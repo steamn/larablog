@@ -24,12 +24,11 @@
 
 
 
-        <div class="header container mx-auto mb-5 flex">
-
+        <div class="header container mx-auto mb-5 flex bg-gray-300 mb-16 py-8 px-4">
             <div class="w-1/3 text-green-700 text-xl font-medium uppercase">
                 title
             </div>
-            <div class="w-1/3 bg-blue-400">
+            <div class="w-1/3">
                 <ul class="flex">
                     <a class="px-2 font-semibold text-gray-700" href="#"><li>First</li></a>
                     <a class="px-2 font-semibold text-gray-700" href="#"><li>Second</li></a>
@@ -38,7 +37,7 @@
                 </ul>
             </div>
 
-            <div class="w-1/3 flex justify-end bg-emerald-300">
+            <div class="w-1/3 flex justify-end">
                 @if (Route::has('login'))
                     <div class="wwww">
                         @auth
