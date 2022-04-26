@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
    public function __invoke()
    {
-       return view('admin.blog.index');
+       return view('admin.main.index');
    }
 }

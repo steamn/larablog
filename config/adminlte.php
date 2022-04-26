@@ -233,14 +233,14 @@ return [
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+//        [
+//            'type' => 'sidebar-menu-search',
+//            'text' => 'search',
+//        ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -252,6 +252,22 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
+        ],
+        ['header' => 'Категории'],
+        [
+            'text' => 'Все категории',
+            'route' => 'category.index',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        [
+            'text' => 'Добавить категорию',
+            'route' => 'category.create',
+            'icon' => 'fas fa-fw fa-folder-plus',
+        ],
+        [
+            'text' => 'Посты',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
         ],
         ['header' => 'account_settings'],
         [

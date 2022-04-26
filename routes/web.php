@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Blog;
 /*
@@ -26,7 +27,11 @@ Route::prefix('admin')->group(function () {
     Route::group(['namespace' => 'App\Http\Controllers\Admin\Blog'], function () {
         Route::get('/', 'IndexController');
     });
+
+    Route::resource('category', CategoryController::class);
 });
+
+
 
 Auth::routes();
 
