@@ -10,11 +10,15 @@ class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @noinspection PhpMultipleClassDeclarationsInspection
      */
     public function index()
     {
-        return view('admin.category.index');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+
+        return view('admin.category.index', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -33,14 +37,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_category = new Category();
+        $new_category->title = $request->title;
+        $new_category->save();
+
+        return redirect()->back()->with('success',' Категория добавлена');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
     {
@@ -51,23 +58,25 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->back()->with('success',' Категория обновлена');
     }
 
     /**

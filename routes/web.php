@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Blog;
 /*
@@ -16,19 +18,17 @@ use App\Http\Controllers\Admin\Blog;
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Blog'], function () {
-    Route::get('/', 'IndexController');
+    Route::get('/', 'IndexController')->name('home');
 });
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 
 Route::prefix('admin')->group(function () {
-    Route::group(['namespace' => 'App\Http\Controllers\Admin\Blog'], function () {
-        Route::get('/', 'IndexController');
-    });
+
+    Route::get('/', [MainController::class, 'index'])->name('main');
 
     Route::resource('category', CategoryController::class);
+    Route::resource('post', PostController::class);
 });
 
 
