@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MainController;
-use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Blog;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

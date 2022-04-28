@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_post = new Post();
+        $new_post->title = $request->title;
     }
 
     /**
@@ -49,7 +51,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.post.edit');
     }
 
     /**

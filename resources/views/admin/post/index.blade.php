@@ -17,10 +17,10 @@
                         ID
                     </th>
                     <th style="width: 60%">
-                        Название материала
+                        Название поста
                     </th>
-                    <th style="width: 8%" class="text-center">
-                        Статус
+                    <th style="width: 20%">
+                        Дата публикации
                     </th>
                     <th style="width: 20%">
                     </th>
@@ -28,41 +28,22 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        #
-                    </td>
-                    <td>
-                        <a>
-                            AdminLTE v3
-                        </a>
-                        <br>
-                        <small>
-                            Created 01.01.2019
-                        </small>
-                    </td>
-
-                    <td class="project-state">
-                        <span class="badge badge-success">Success</span>
-                    </td>
+                    <td>1</td>
+                    <td>AdminLTE v3</td>
+                    <td>01.01.2019</td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
                         <a class="btn btn-info btn-sm" href="#">
                             <i class="fas fa-pencil-alt">
                             </i>
-                            Edit
+                            Редактировать
                         </a>
                         <a class="btn btn-danger btn-sm" href="#">
                             <i class="fas fa-trash">
                             </i>
-                            Delete
+                            Удалить
                         </a>
                     </td>
                 </tr>
-
                 </tbody>
             </table>
         </div>
