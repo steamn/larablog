@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('category.store') }}">
+        <form method="post" action="{{ route('post.store') }}">
             @csrf
             <div class="card card-primary">
                 <div class="card-body">
@@ -22,15 +22,16 @@
                     </div>
                     <div class="form-group">
                         <label for="post-cat">Выберите категорию</label>
-                        <select name="cat" class="form-control" id="post-cat">
-                            <option>Value 1</option>
-                            <option>Value 2</option>
-                            <option>Value 3</option>
+                        <select name="category_id" class="form-control" id="post-cat">
+                            @foreach($categories as $category)
+                                <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="post-content">Текст поста</label>
-                        <textarea name="content" class="form-control" id="post-content" rows="6" required></textarea>
+                        <textarea name="post_content" class="form-control" id="post-content" rows="6" required></textarea>
                     </div>
                 </div>
                 <div class="card-footer">

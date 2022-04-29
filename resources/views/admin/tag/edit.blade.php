@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@section('title', 'Добавить категорию')
+@section('title', 'Редактирование тега ')
 
 @section('content')
 
@@ -13,17 +13,18 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('category.store') }}">
+        <form method="post" action="{{ route('tag.update', $tag['id'] ) }}">
             @csrf
+            @method('PUT')
             <div class="card card-primary">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="tagName">Название тега</label>
-                        <input type="text" name="title" class="form-control" id="tagName" placeholder="Введите название" required>
+                        <input type="text" value="{{ $tag['title'] }}" name="title" class="form-control" id="tagName" placeholder="Введите название" required>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Добавить</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </div>
         </form>

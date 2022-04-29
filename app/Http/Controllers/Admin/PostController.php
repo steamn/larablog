@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.post.index');
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return view('admin.post.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -23,7 +27,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.post.create');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+
+        return view('admin.post.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -34,6 +42,11 @@ class PostController extends Controller
     {
         $new_post = new Post();
         $new_post->title = $request->title;
+        $new_post->content = $request->post_content;
+        $new_post->category_id = $request->category_id;
+        $new_post->save();
+
+        return redirect()->back()->with('success', 'Пост добавлен');
     }
 
     /**
@@ -51,7 +64,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.post.edit');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        return view('admin.post.edit', [
+            'post' => $post,
+            'categories' => $categories
+        ]);
+
     }
 
     /**
@@ -59,21 +77,27 @@ class PostController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->content = $request->post_content;
+        $post->category_id = $request->category_id;
+
+        return redirect()->back()->with('success', 'Пост обновлен');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->back()->with('success',' Пост удален');
     }
 }

@@ -19,6 +19,9 @@
                     <th style="width: 60%">
                         Название поста
                     </th>
+                    <th>
+                        Категория
+                    </th>
                     <th style="width: 20%">
                         Дата публикации
                     </th>
@@ -27,23 +30,27 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>AdminLTE v3</td>
-                    <td>01.01.2019</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Редактировать
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Удалить
-                        </a>
-                    </td>
-                </tr>
+                @foreach($posts as $post)
+                    <tr>
+                        <td>{{ $post->id }}</td>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->category->title }}</td>
+                        <td>{{ $post->created_at }}</td>
+                        <td class="project-actions text-right d-flex justify-content-end">
+                            <a class="btn btn-info btn-sm mr-2" href="{{ route('post.edit', $post->id) }}">
+                                <i class="fas fa-pencil-alt"></i>Редактировать
+                            </a>
+                            <form action="{{ route('post.destroy', $post->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger btn-sm delete-btn">
+                                    <i class="fas fa-trash"></i>Удалить
+                                </button>
+                            </form>
+
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
