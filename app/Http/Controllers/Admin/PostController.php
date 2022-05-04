@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -40,10 +41,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $path = $request->file('post_image')->store('images');
+
+//        dd($request->file('post_image')->store('images'));
+
         $new_post = new Post();
         $new_post->title = $request->title;
         $new_post->content = $request->post_content;
         $new_post->category_id = $request->category_id;
+        $new_post->post_image = $path;
         $new_post->save();
 
         return redirect()->back()->with('success', 'Пост добавлен');
@@ -75,9 +82,9 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Post $post
+     * @return RedirectResponse
      */
     public function update(Request $request, Post $post)
     {
@@ -91,8 +98,8 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Post $post
+     * @return RedirectResponse
      */
     public function destroy(Post $post)
     {

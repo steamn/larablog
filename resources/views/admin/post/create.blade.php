@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('post.store') }}">
+        <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="card card-primary">
                 <div class="card-body">
@@ -28,6 +28,10 @@
                             @endforeach
 
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="post-image" class="form-label">Картинка поста</label>
+                        <input name="post_image" class="form-control" type="file" id="post-image">
                     </div>
                     <div class="form-group">
                         <label for="post-content">Текст поста</label>

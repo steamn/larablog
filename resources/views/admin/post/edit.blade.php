@@ -27,8 +27,14 @@
                             @foreach($categories as $category)
                                 <option value="{{ $category['id'] }}" @if($category->id == $post->category_id) selected @endif>{{ $category['title'] }}</option>
                             @endforeach
-{{--                                <option value="{{ $post->category_id }}">{{ $post->category->title }}</option>--}}
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Картинка поста</label>
+                        <div class="post-img">
+                            <img class="w-25 img-fluid" src="{{ asset('/storage/'. $post->post_image)  }}" alt="image">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="post-content">Текст поста</label>
