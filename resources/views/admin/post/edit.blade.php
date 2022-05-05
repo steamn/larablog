@@ -33,6 +33,8 @@
                     <div class="form-group">
                         <label>Картинка поста</label>
                         <div class="post-img">
+
+
                             <img class="w-25 img-fluid" src="{{ asset('/storage/'. $post->post_image)  }}" alt="image">
                         </div>
                     </div>

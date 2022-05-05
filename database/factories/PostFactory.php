@@ -18,10 +18,12 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
+
             'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraphs,
-//            'category_id' => $this->faker->randomElement(Category::all())['id'],
-//            'post_image' => $this->faker->imageUrl(640, 480, 'animals', true)
+            'content' => $this->faker->text,
+            'category_id' => $this->faker->randomElement(Category::all())['id'],
+            'post_image' => $this->faker->imageUrl(640, 480, 'animals', true)
+
         ];
     }
 }
