@@ -22,8 +22,6 @@
 <body>
     <div id="app">
 
-
-
         <div class="header container mx-auto mb-5 flex bg-gray-300 mb-16 py-8 px-4">
             <div class="w-1/3 text-green-700 text-xl font-medium uppercase">
                 title

@@ -34,8 +34,14 @@
                         <label>Картинка поста</label>
                         <div class="post-img">
 
-
-                            <img class="w-25 img-fluid" src="{{ asset('/storage/'. $post->post_image)  }}" alt="image">
+                            @php
+                                $url = parse_url($post->post_image)
+                            @endphp
+                            @if(array_key_exists('scheme', $url ))
+                                <img class="w-25 img-fluid" src="{{ $post->post_image  }}" alt="image">
+                            @else
+                                <img class="w-25 img-fluid" src="{{ asset('/storage/'. $post->post_image)  }}" alt="image">
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
