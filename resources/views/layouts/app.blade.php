@@ -22,35 +22,12 @@
 <body>
     <div id="app">
 
-        <div class="header container mx-auto mb-5 flex bg-gray-300 mb-16 py-8 px-4">
-            <div class="w-1/3 text-green-700 text-xl font-medium uppercase">
-                title
-            </div>
-            <div class="w-1/3">
-                <ul class="flex">
-                    <a class="px-2 font-semibold text-gray-700" href="#"><li>First</li></a>
-                    <a class="px-2 font-semibold text-gray-700" href="#"><li>Second</li></a>
-                    <a class="px-2 font-semibold text-gray-700" href="#"><li>Third</li></a>
-                    <a class="px-2 font-semibold text-gray-700" href="#"><li>Forth</li></a>
-                </ul>
-            </div>
 
-            <div class="w-1/3 flex justify-end">
-                @if (Route::has('login'))
-                    <div class="wwww">
-                        @auth
-                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                   class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div>
+        <div class="header container">
+
+            @include('layouts.header')
+
 
         </div>
         @yield('content')

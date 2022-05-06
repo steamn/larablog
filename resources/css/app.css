@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.feed-post-image img {
+    height: 340px;
+    object-fit: cover;
+    width: 100%;
+}
