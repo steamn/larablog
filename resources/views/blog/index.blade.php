@@ -9,8 +9,8 @@
             <div class="col-8">
                 <div class="row">
                     @foreach($posts as $post)
-                        <div class="feed-post col-6">
-                            <div class="feed-post-image">
+                        <div class="feed-post col-6 mb-4 pb-4">
+                            <div class="feed-post-image overflow-hidden">
                                 @php
                                     $url = parse_url($post->post_image)
                                 @endphp
@@ -20,10 +20,10 @@
                                     <img class="sdf" src="{{ asset('/storage/'. $post->post_image)  }}" alt="image">
                                 @endif
                             </div>
-                            <div class="cat">
-                                {{$post->category->title}}
+                            <div class="cat text-secondary my-2">
+                                Категория: {{$post->category->title}}
                             </div>
-                            <div class="title">
+                            <div class="title fw-bold fs-5">
                                 {{$post->title}}
                             </div>
                         </div>

@@ -10,11 +10,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 
-class CategoryController extends Controller
+class AdminCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @noinspection PhpMultipleClassDeclarationsInspection
      */
     public function index()
     {

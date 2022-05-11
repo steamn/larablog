@@ -22,7 +22,7 @@
         <div class="category-widget-list">
             <ul>
                 @foreach($categories as $category)
-                    <li>{{$category->title}}</li>
+                    <li>{{$category->title}} {{$category->id}} </li>
                 @endforeach
             </ul>
         </div>

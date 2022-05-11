@@ -8,7 +8,7 @@ use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class AdminPostController extends Controller
 {
     /**
      * Display a listing of the resource.

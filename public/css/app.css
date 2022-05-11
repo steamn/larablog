@@ -18041,5 +18041,14 @@ textarea.form-control-lg {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
+    transition: all .2s ease;
+}
+.feed-post-image:hover img {
+    transform: scale(1.2);
+    transition: all .2s ease;
+}
+
+.single-post-image img {
+     max-height: 480px;
 }
 

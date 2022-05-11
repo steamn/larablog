@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminMainController;
 
-use App\Http\Controllers\Admin\PostController;
-use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminTagController;
+use App\Http\Controllers\Blog\CategoryController;
+use App\Http\Controllers\Blog\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,22 +25,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Blog'], function () {
     Route::get('/', 'IndexController')->name('home');
 });
 
+Route::resource('cat', CategoryController::class);
+Route::resource('post', PostController::class);
 
 
 Route::prefix('admin')->group(function () {
 
-    Route::get('/', [MainController::class, 'index'])->name('main');
+    Route::get('/', [AdminMainController::class, 'index'])->name('main');
 
-    Route::resource('category', CategoryController::class);
-    Route::resource('post', PostController::class);
-    Route::resource('tag', TagController::class);
+    Route::resource('category', AdminCategoryController::class);
+    Route::resource('post', AdminPostController::class);
+    Route::resource('tag', AdminTagController::class);
 });
 
 
-
 Auth::routes();
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
