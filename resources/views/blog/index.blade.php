@@ -24,7 +24,7 @@
                                 Категория: {{$post->category->title}}
                             </div>
                             <div class="title fw-bold fs-5">
-                                <a href=" {{ route('post.show', $post->id) }}">{{ $post->title }}</a>
+                                <a href=" {{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
                             </div>
 
                         </div>

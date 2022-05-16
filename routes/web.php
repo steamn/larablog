@@ -26,7 +26,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Blog'], function () {
 });
 
 Route::resource('cat', CategoryController::class);
-Route::resource('post', PostController::class);
+Route::resource('posts', PostController::class);
 
 
 
