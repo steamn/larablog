@@ -37,10 +37,10 @@
                         <td>{{ $post->category->title }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td class="project-actions text-right d-flex justify-content-end">
-                            <a class="btn btn-info btn-sm mr-2" href="{{ route('post.edit', $post->id) }}">
+                            <a class="btn btn-info btn-sm mr-2" href="{{ route('admin_post.edit', $post->id) }}">
                                 <i class="fas fa-pencil-alt"></i>Редактировать
                             </a>
-                            <form action="{{ route('post.destroy', $post->id) }}" method="post">
+                            <form action="{{ route('admin_post.destroy', $post->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger btn-sm delete-btn">

@@ -29,13 +29,14 @@ Route::resource('cat', CategoryController::class);
 Route::resource('post', PostController::class);
 
 
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/', [AdminMainController::class, 'index'])->name('main');
 
-    Route::resource('category', AdminCategoryController::class);
-    Route::resource('post', AdminPostController::class);
-    Route::resource('tag', AdminTagController::class);
+    Route::resource('admin_category', AdminCategoryController::class);
+    Route::resource('admin_post', AdminPostController::class);
+    Route::resource('admin_tag', AdminTagController::class);
 });
 
 

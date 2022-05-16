@@ -24,18 +24,16 @@
                                 Категория: {{$post->category->title}}
                             </div>
                             <div class="title fw-bold fs-5">
-                                {{$post->title}}
+                                <a href=" {{ route('post.show', $post->id) }}">{{ $post->title }}</a>
                             </div>
+
                         </div>
                     @endforeach
                 </div>
-
             </div>
             <div class="col-4">
             @include('layouts.sidebar')
-
             </div>
-
         </div>
     </div>
 

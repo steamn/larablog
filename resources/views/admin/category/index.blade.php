@@ -26,12 +26,12 @@
                     <td>{{ $category['title'] }}</td>
 
                     <td class="project-actions text-right d-flex justify-content-end">
-                        <a class="btn btn-info btn-sm mr-2" href="{{ route('category.edit', $category['id']) }}">
+                        <a class="btn btn-info btn-sm mr-2" href="{{ route('admin_category.edit', $category['id']) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Редактировать
                         </a>
-                        <form action="{{ route('category.destroy', $category['id']) }}" method="post">
+                        <form action="{{ route('admin_category.destroy', $category['id']) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm delete-btn">

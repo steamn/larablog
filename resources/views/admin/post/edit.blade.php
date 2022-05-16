@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('post.update', $post->id) }}">
+        <form method="post" action="{{ route('admin_post.update', $post->id) }}">
             @csrf
             @method('put')
             <div class="card card-primary">

@@ -33,13 +33,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('category.index') }}" class="nav-link">
+                            <a href="{{ route('admin_category.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Все категории</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('category.create') }}" class="nav-link">
+                            <a href="{{ route('admin_category.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Добавить категорию</p>
                             </a>
@@ -56,13 +56,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('post.index') }}" class="nav-link">
+                            <a href="{{ route('admin_post.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Все посты</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('post.create') }}" class="nav-link">
+                            <a href="{{ route('admin_post.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Добавить пост</p>
                             </a>
@@ -79,13 +79,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('tag.index') }}" class="nav-link">
+                            <a href="{{ route('admin_tag.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Все теги</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('tag.create') }}" class="nav-link">
+                            <a href="{{ route('admin_tag.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Добавить тег</p>
                             </a>

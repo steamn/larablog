@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('tag.update', $tag['id'] ) }}">
+        <form method="post" action="{{ route('admin_tag.update', $tag['id'] ) }}">
             @csrf
             @method('PUT')
             <div class="card card-primary">

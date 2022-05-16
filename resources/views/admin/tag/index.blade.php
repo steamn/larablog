@@ -32,10 +32,10 @@
 
 
                     <td class="project-actions text-right d-flex justify-content-end">
-                        <a class="btn btn-info btn-sm mr-2" href="{{ route('tag.edit', $tag['id'] ) }}">
+                        <a class="btn btn-info btn-sm mr-2" href="{{ route('admin_tag.edit', $tag['id'] ) }}">
                             <i class="fas fa-pencil-alt"></i>Редактировать
                         </a>
-                        <form action="{{ route('tag.destroy', $tag['id'] ) }}" method="post">
+                        <form action="{{ route('admin_tag.destroy', $tag['id'] ) }}" method="post">
                             @csrf
                             @method('delete')
                             <button class="btn btn-danger btn-sm delete-btn">

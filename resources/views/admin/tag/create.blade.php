@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="post" action="{{ route('tag.store') }}">
+        <form method="post" action="{{ route('admin_tag.store') }}">
             @csrf
             <div class="card card-primary">
                 <div class="card-body">
